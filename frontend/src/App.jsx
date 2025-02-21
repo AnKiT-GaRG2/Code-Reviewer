@@ -5,6 +5,9 @@ import prism from "prismjs"
 import './App.css'
 import Editor from "react-simple-code-editor"
 import axios from 'axios'
+import Markdown from "react-markdown"
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github-dark.css";
 
 function App() {
   const [ count, setCount ] = useState(0)
@@ -51,7 +54,7 @@ function App() {
             className="review">Review</div>
         </div>
         <div className="right">{
-          review
+          <Markdown  rehypePlugins={[ rehypeHighlight ]}>{review}</Markdown>
         }</div>
         </main>
      
