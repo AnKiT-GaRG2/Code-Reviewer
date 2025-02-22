@@ -3,7 +3,12 @@ const express = require('express');
 const aiRoutes = require('./routes/ai.routes')
 const cors = require('cors')
 const app = express()
-app.use(cors())
+const corsOptions = {
+    origin: '*', 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  };
+app.use(cors(corsOptions))
 app.use(express.json())
 app.get('/', (req, res) => {
     res.send('Hello World')
