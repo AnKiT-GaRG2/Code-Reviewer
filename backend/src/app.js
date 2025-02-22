@@ -4,7 +4,7 @@ const aiRoutes = require('./routes/ai.routes')
 const cors = require('cors')
 const app = express()
 const corsOptions = {
-    origin: '*', 
+    origin: 'http://localhost:5173/', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
     allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
   };
